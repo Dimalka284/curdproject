@@ -44,6 +44,14 @@ Route::delete('/customer',[CustomerController::class,'destroy'])->name('customer
 //View Student
 Route::get('/student',[StudentController::class,'index']);
 
+// PayHere Test Routes
+use App\Http\Controllers\PayHereTestController;
+Route::get('/payhere/test', [PayHereTestController::class, 'index'])->name('payhere.test');
+Route::get('/payhere/debugger', [PayHereTestController::class, 'debugger'])->name('payhere.debugger');
+Route::get('/payhere/return', [PayHereTestController::class, 'returnUrl'])->name('payment.success');
+Route::get('/payhere/cancel', [PayHereTestController::class, 'cancelUrl'])->name('payment.cancel');
+Route::post('/payhere/notify', [PayHereTestController::class, 'notifyUrl'])->name('payment.notify');
+
 
 
 
